@@ -7,6 +7,48 @@
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.2/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body>
-  <h1 class="text-4xl font-bold">Hello, Tailwind!</h1>
+  <!-- 1. Paste this at the very top of <body> in index.html -->
+
+  <nav class="bg-white shadow-md fixed w-full z-10" role="navigation" aria-label="Main navigation">
+    <div class="container mx-auto px-4 py-2 flex items-center justify-between">
+      <!-- Logo / Brand -->
+      <a href="#" class="text-2xl font-bold text-gray-800">
+        <!-- Replace with your name or logo -->
+        Nsikak Menim
+      </a>
+
+      <!-- Mobile Menu Button -->
+      <button id="menu-btn"
+              class="block md:hidden focus:outline-none"
+              aria-label="Toggle navigation"
+              aria-expanded="false">
+        <!-- Hamburger icon -->
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+
+      <!-- Navigation Links -->
+      <ul id="menu" class="hidden md:flex space-x-6">
+        <li><a href="#home"    class="text-gray-600 hover:text-gray-800">Home</a></li>
+        <li><a href="#projects"class="text-gray-600 hover:text-gray-800">Projects</a></li>
+        <li><a href="#about"   class="text-gray-600 hover:text-gray-800">About</a></li>
+        <li><a href="#contact" class="text-gray-600 hover:text-gray-800">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- 2. Add this just before </body> to enable mobile toggle -->
+  <script>
+    // Toggle the mobile menu visibility
+    const btn  = document.getElementById('menu-btn');
+    const menu = document.getElementById('menu');
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      menu.classList.toggle('hidden');
+    });
+  </script>
 </body>
 </html>
