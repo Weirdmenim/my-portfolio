@@ -8,6 +8,9 @@
   <link
     href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.2/dist/tailwind.min.css"
     rel="stylesheet">
+    <!-- In <head> of index.html, after Tailwind -->
+  <link href="css/style.css" rel="stylesheet">
+
 </head>
 
 <!-- Add top padding so fixed navbar doesn’t overlap content -->
@@ -127,103 +130,108 @@
   </section>
 
   <!-- 1. Add this after your About <section> in index.html -->
-<section id="contact" class="py-20 bg-gray-100">
-  <div class="container mx-auto px-6 lg:px-20 max-w-xl">
-    <!-- Section Heading -->
-    <h2 class="text-3xl lg:text-4xl font-bold text-center mb-8">
-      Contact Me
-    </h2>
+  <section id="contact" class="py-20 bg-gray-100">
+    <div class="container mx-auto px-6 lg:px-20 max-w-xl">
+      <!-- Section Heading -->
+      <h2 class="text-3xl lg:text-4xl font-bold text-center mb-8">
+        Contact Me
+      </h2>
 
-    <!-- Contact Form -->
-    <form
-      action="mailto:nemenim@gmail.com"
-      method="POST"
-      enctype="text/plain"
-      class="space-y-6"
-      novalidate>
-      <!-- Name Field -->
-      <div>
-        <label for="name" class="block text-lg font-medium mb-2">
-          Name
-        </label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          required
-          class="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-        />
-      </div>
+      <!-- Contact Form -->
+      <form
+        action="mailto:nemenim@gmail.com"
+        method="POST"
+        enctype="text/plain"
+        class="space-y-6"
+        novalidate>
+        <!-- Name Field -->
+        <div>
+          <label for="name" class="block text-lg font-medium mb-2">
+            Name
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            class="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          />
+        </div>
 
-      <!-- Email Field -->
-      <div>
-        <label for="email" class="block text-lg font-medium mb-2">
-          Email
-        </label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          required
-          class="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-        />
-      </div>
+        <!-- Email Field -->
+        <div>
+          <label for="email" class="block text-lg font-medium mb-2">
+            Email
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            class="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          />
+        </div>
 
-      <!-- Message Field -->
-      <div>
-        <label for="message" class="block text-lg font-medium mb-2">
-          Message
-        </label>
-        <textarea
-          id="message"
-          name="message"
-          rows="5"
-          required
-          class="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-        ></textarea>
-      </div>
+        <!-- Message Field -->
+        <div>
+          <label for="message" class="block text-lg font-medium mb-2">
+            Message
+          </label>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            required
+            class="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          ></textarea>
+        </div>
 
-      <!-- Submit Button -->
-      <div class="text-center">
-        <button
-          type="submit"
-          class="bg-indigo-600 text-white font-semibold px-6 py-3 rounded-full shadow hover:bg-indigo-700 transition"
-        >
-          Send Message
-        </button>
-      </div>
-    </form>
+        <!-- Submit Button -->
+        <div class="text-center">
+          <button
+            type="submit"
+            class="bg-indigo-600 text-white font-semibold px-6 py-3 rounded-full shadow hover:bg-indigo-700 transition"
+          >
+            Send Message
+          </button>
+        </div>
+      </form>
 
+      <div class="social-icons flex justify-center mt-8">
         <!-- Optional Social Links -->
-    <div class="flex justify-center space-x-4 mt-8">
-      <a
-        href="https://github.com/weirdmenim"
-        aria-label="GitHub profile"
-        class="text-gray-600 hover:text-gray-800"
-        target="_blank"
-        rel="noopener"
-      >
-        <!-- GitHub SVG Icon (20×20 px) -->
-        <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 .5C5.65.5.5 5.65.5 12c…"/>
-        </svg>
-      </a>
-      <a
-        href="https://linkedin.com/in/nsikak-menim/"
-        aria-label="LinkedIn profile"
-        class="text-gray-600 hover:text-gray-800"
-        target="_blank"
-        rel="noopener"
-      >
-        <!-- LinkedIn SVG Icon (20×20 px) -->
-        <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M4.98 3.5C3.33 3.5…"/>
-        </svg>
-      </a>
-    </div>
+        <div class="flex justify-center space-x-4 mt-8">
+          <a
+            href="https://github.com/weirdmenim"
+            aria-label="GitHub profile"
+            class="text-gray-600 hover:text-gray-800"
+            target="_blank"
+            rel="noopener"
+          >
+            <!-- GitHub SVG Icon (20×20 px) -->
+            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 .5C5.65.5.5 5.65.5 12c…"/>
+            </svg>
+          </a>
+          <a
+            href="https://linkedin.com/in/nsikak-menim/"
+            aria-label="LinkedIn profile"
+            class="text-gray-600 hover:text-gray-800"
+            target="_blank"
+            rel="noopener"
+          >
+            <!-- LinkedIn SVG Icon (20×20 px) -->
+            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M4.98 3.5C3.33 3.5…"/>
+            </svg>
+          </a>
+        </div>
 
-  </div>
-</section>
+      </div>
+
+          <!-- Optional Social Links -->
+      
+    </div>
+  </section>
 
   <!-- Mobile-menu toggle script -->
   <script>
