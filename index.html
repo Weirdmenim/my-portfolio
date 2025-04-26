@@ -2,13 +2,7 @@
 <html lang="en">
 <head>
   <!--
-    Content Security Policy:
-      - default-src 'self';
-      - script-src 'self' https://www.googletagmanager.com;
-      - style-src 'self' https://cdn.jsdelivr.net;
-      - img-src 'self' data:;
-      - font-src 'self';
-      - connect-src 'self' https://www.google-analytics.com;
+    Content Security Policy: single-line for broad browser support
   -->
   <meta http-equiv="Content-Security-Policy"
         content="default-src 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self' https://cdn.jsdelivr.net; img-src 'self' data:; font-src 'self'; connect-src 'self' https://www.google-analytics.com;" />
@@ -24,12 +18,10 @@
   <!-- Custom Styles -->
   <link href="css/style.css" rel="stylesheet">
 
-  <!-- Google Analytics: load library only, configuration moved to js/main.js -->
-  <!-- Google Analytics: load library only -->
+  <!-- Google Analytics library only; config is in js/main.js -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z30T46JGHS"></script>
 
-
-  <!-- Deferred Main JS (menu toggle + analytics init) -->
+  <!-- Deferred Main JS: menu toggle, GA init, filtering -->
   <script src="js/main.js" defer></script>
 </head>
 <body class="pt-16">  <!-- Offset for fixed navbar -->
@@ -45,7 +37,7 @@
               aria-label="Toggle navigation" aria-expanded="false" aria-controls="menu">
         <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16"/>
+                d="M4 6h16M4 12h16M4 18h16" />
         </svg>
       </button>
       <ul id="menu" class="hidden md:flex space-x-6" aria-hidden="true">
@@ -57,7 +49,7 @@
     </div>
   </nav>
 
-  <!-- Hero -->
+  <!-- Hero Section -->
   <section id="home" class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white h-screen flex items-center">
     <div class="container mx-auto px-6 lg:px-20 text-center">
       <h1 class="text-5xl lg:text-6xl font-extrabold mb-4">Hi, I’m Nsikak Menim</h1>
@@ -70,30 +62,60 @@
     </div>
   </section>
 
-  <!-- Projects Grid -->
+  <!-- Projects Grid with Filter UI -->
   <section id="projects" class="py-20 bg-gray-100">
     <div class="container mx-auto px-6 lg:px-20">
-      <h2 class="text-3xl lg:text-4xl font-bold text-center mb-12">My Projects</h2>
+      <h2 class="text-3xl lg:text-4xl font-bold text-center mb-8">My Projects</h2>
+  
+      <!-- Filter Buttons -->
+      <div id="project-filters" class="flex flex-wrap gap-4 mb-8 justify-center">
+        <button data-filter="all"    aria-pressed="true"  class="filter-btn px-4 py-2 rounded bg-indigo-600 text-white">All</button>
+        <button data-filter="python" aria-pressed="false" class="filter-btn px-4 py-2 rounded bg-gray-200 hover:bg-gray-300">Python</button>
+        <button data-filter="data-cleaning" aria-pressed="false" class="filter-btn px-4 py-2 rounded bg-gray-200 hover:bg-gray-300">Data Cleaning</button>
+        <button data-filter="data-visualization" aria-pressed="false" class="filter-btn px-4 py-2 rounded bg-gray-200 hover:bg-gray-300">Data Visualization</button>
+        <button data-filter="data-analysis" aria-pressed="false" class="filter-btn px-4 py-2 rounded bg-gray-200 hover:bg-gray-300">Data Analysis</button>
+        <button data-filter="web-scraping" aria-pressed="false" class="filter-btn px-4 py-2 rounded bg-gray-200 hover:bg-gray-300">Web Scraping</button>
+        <!-- etc. -->
+      </div>
+  
+      <!-- Project Cards -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- ...repeat project cards... -->
+        <div class="bg-white rounded-2xl shadow-md p-6 transition hover:shadow-lg" data-category="python">
+          <h3 class="text-xl font-semibold mb-2">Python</h3>
+        </div>
+  
+        <div class="bg-white rounded-2xl shadow-md p-6 transition hover:shadow-lg" data-category="data-cleaning">
+          <h3 class="text-xl font-semibold mb-2">Data Cleaning</h3>
+        </div>
+  
+        <div class="bg-white rounded-2xl shadow-md p-6 transition hover:shadow-lg" data-category="data-visualization">
+          <h3 class="text-xl font-semibold mb-2">Data Visualization</h3>
+        </div>
+  
+        <div class="bg-white rounded-2xl shadow-md p-6 transition hover:shadow-lg" data-category="data-analysis">
+          <h3 class="text-xl font-semibold mb-2">Data Analysis</h3>
+        </div>
+  
+        <div class="bg-white rounded-2xl shadow-md p-6 transition hover:shadow-lg" data-category="web-scraping">
+          <h3 class="text-xl font-semibold mb-2">Web Scraping</h3>
+        </div>
+  
+        <!-- other cards… -->
       </div>
     </div>
   </section>
+  
 
   <!-- About -->
   <section id="about" class="py-20 bg-white">
     <div class="container mx-auto px-6 lg:px-20 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
       <picture>
         <source srcset="images/profile.webp" type="image/webp">
-        <img src="images/profile.jpg" width="256" height="256"
-             alt="Nsikak Menim smiling in a professional headshot"
-             class="w-64 h-64 rounded-full mx-auto md:mx-0 shadow-lg">
+        <img src="images/profile.jpg" width="256" height="256" alt="Nsikak Menim smiling in a professional headshot" class="w-64 h-64 rounded-full mx-auto md:mx-0 shadow-lg">
       </picture>
       <div>
         <h2 class="text-3xl lg:text-4xl font-bold mb-4">About Me</h2>
-        <p class="text-lg mb-6">
-          I’m a data enthusiast who loves turning raw data into actionable insights. With a strong foundation in Python, I’ve built projects ranging from web scraping and data visualization to advanced machine-learning models. I have skills in LLM and NLP, and I’m always eager to learn more about the latest trends in data science.
-        </p>
+        <p class="text-lg mb-6">I’m a data enthusiast who loves turning raw data into actionable insights. With a strong foundation in Python, I’ve built projects ranging from web scraping and data visualization to advanced machine-learning models. I have skills in LLM and NLP, and I’m always eager to learn more about the latest trends in data science.</p>
         <ul class="list-disc list-inside space-y-2 text-lg">
           <li>Python Development</li>
           <li>Data Cleaning & Transformation</li>
@@ -114,14 +136,10 @@
       </form>
       <div class="social-icons flex justify-center space-x-3 mt-8">
         <a href="https://github.com/weirdmenim" aria-label="GitHub" target="_blank" rel="noopener">
-          <svg class="h-4 w-4" width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-            <!-- GitHub path -->
-          </svg>
+          <svg class="h-4 w-4" width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="..."/></svg>
         </a>
         <a href="https://linkedin.com/in/nsikak-menim/" aria-label="LinkedIn" target="_blank" rel="noopener">
-          <svg class="h-4 w-4" width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-            <!-- LinkedIn path -->
-          </svg>
+          <svg class="h-4 w-4" width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="..."/></svg>
         </a>
       </div>
     </div>
@@ -142,6 +160,5 @@
       </a>
     </div>
   </footer>
-
 </body>
 </html>
