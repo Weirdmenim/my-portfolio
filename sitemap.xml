@@ -1,0 +1,16 @@
+xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://weirdmenim.github.io/my-portfolio/</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://weirdmenim.github.io/my-portfolio/#projects</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://weirdmenim.github.io/my-portfolio/#blog</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+  <!-- Add additional section URLs as needed -->
+</urlset>
