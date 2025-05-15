@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,7 +57,7 @@
 
 <body class="pt-16 bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
   <!-- Skip to content for accessibility -->
-  <a href="#main-content" class="skip-to-content focus:not-sr-only">Skip to main content</a>
+  <a href="#main-content" class="skip-to-content focus:not-sr-only"</a>
   
   <header role="banner">
     <!-- Navbar -->
@@ -122,47 +123,160 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-gray-100 dark:bg-gray-800">
-      <div class="container mx-auto px-6 lg:px-20">
-        <h2 class="text-3xl lg:text-4xl font-bold text-center mb-8">My Projects</h2>
+    <!-- Projects Section -->
+<section id="projects" class="py-20 bg-gray-100 dark:bg-gray-800">
+  <div class="container mx-auto px-6 lg:px-20">
+    <h2 class="text-3xl lg:text-4xl font-bold text-center mb-8">My Projects</h2>
 
-        <!-- Filter Buttons -->
-        <div id="project-filters" class="flex flex-wrap gap-4 mb-8 justify-center">
-          <button data-filter="all" aria-pressed="true" class="filter-btn px-4 py-2 rounded bg-indigo-600 text-white">All</button>
-          <button data-filter="python" class="filter-btn px-4 py-2 rounded bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600">Python</button>
-          <button data-filter="data-cleaning" class="filter-btn px-4 py-2 rounded bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600">Data Cleaning</button>
-          <button data-filter="data-visualization" class="filter-btn px-4 py-2 rounded bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600">Data Visualization</button>
-          <button data-filter="data-analysis" class="filter-btn px-4 py-2 rounded bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600">Data Analysis</button>
-          <button data-filter="web-scraping" class="filter-btn px-4 py-2 rounded bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600">Web Scraping</button>
-          <button data-filter="others" class="filter-btn px-4 py-2 rounded bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600">Others</button>
-        </div>
+    <!-- Filter Buttons -->
+    <div id="project-filters" class="flex flex-wrap gap-4 mb-8 justify-center">
+      <button data-filter="all" aria-pressed="true" class="filter-btn px-4 py-2 rounded bg-indigo-600 text-white">All</button>
+      <button data-filter="python" class="filter-btn px-4 py-2 rounded bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600">Python</button>
+      <button data-filter="data-cleaning" class="filter-btn px-4 py-2 rounded bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600">Data Cleaning</button>
+      <button data-filter="data-visualization" class="filter-btn px-4 py-2 rounded bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600">Data Visualization</button>
+      <button data-filter="data-analysis" class="filter-btn px-4 py-2 rounded bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600">Data Analysis</button>
+      <button data-filter="web-scraping" class="filter-btn px-4 py-2 rounded bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600">Web Scraping</button>
+      <button data-filter="others" class="filter-btn px-4 py-2 rounded bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600">Others</button>
+    </div>
 
-        <!-- Projects Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          <a
-            href="https://github.com/NsikakMenim/Data-Analysis-Portfolio/blob/main/analysis_of_insurance_data.ipynb"
-            target="_blank"
-            rel="noopener"
-            class="block bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-md hover:shadow-lg transition"
-            data-category="python,others"
-          >
-            <h3 class="text-xl font-semibold mb-2">Python Projects</h3>
-          </a>
-          <div class="bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-md hover:shadow-lg transition" data-category="data-cleaning">
-            <h3 class="text-xl font-semibold mb-2">Data Cleaning</h3>
-          </div>
-          <div class="bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-md hover:shadow-lg transition" data-category="data-visualization">
-            <h3 class="text-xl font-semibold mb-2">Data Visualization</h3>
-          </div>
-          <div class="bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-md hover:shadow-lg transition" data-category="data-analysis">
-            <h3 class="text-xl font-semibold mb-2">Data Analysis</h3>
-          </div>
-          <div class="bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-md hover:shadow-lg transition" data-category="web-scraping">
-            <h3 class="text-xl font-semibold mb-2">Web Scraping</h3>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- Projects Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Python -->
+      <a href="https://github.com/Weirdmenim/python-password-generator" target="_blank" class="block bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-md hover:shadow-lg transition" data-category="python">
+        <h3 class="text-xl font-semibold mb-2">python-password-generator</h3>
+      </a>
+      <a href="https://github.com/Weirdmenim/Dynamic-Resume-Card" target="_blank" class="block bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-md hover:shadow-lg transition hidden" data-category="python">
+        <h3 class="text-xl font-semibold mb-2">Dynamic-Resume-Card</h3>
+      </a>
+      <a href="https://github.com/Weirdmenim/image-classifier-with-cnn" target="_blank" class="block bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-md hover:shadow-lg transition hidden" data-category="python">
+        <h3 class="text-xl font-semibold mb-2">image-classifier-with-cnn</h3>
+      </a>
+      <a href="https://github.com/Weirdmenim/text-sentiment-analyzer-with-lstm" target="_blank" class="block bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-md hover:shadow-lg transition hidden" data-category="python">
+        <h3 class="text-xl font-semibold mb-2">text-sentiment-analyzer-with-lstm</h3>
+      </a>
+      <a href="https://github.com/Weirdmenim/credit-card-fraud-detection" target="_blank" class="block bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-md hover:shadow-lg transition hidden" data-category="python">
+        <h3 class="text-xl font-semibold mb-2">credit-card-fraud-detection</h3>
+      </a>
+
+      <!-- Data Cleaning -->
+      <a href="https://github.com/Weirdmenim/etl-pipeline-simulator" target="_blank" class="block bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-md hover:shadow-lg transition hidden" data-category="data-cleaning">
+        <h3 class="text-xl font-semibold mb-2">etl-pipeline-simulator</h3>
+      </a>
+      <a href="https://github.com/Weirdmenim/automated-etl-pipeline" target="_blank" class="block bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-md hover:shadow-lg transition hidden" data-category="data-cleaning">
+        <h3 class="text-xl font-semibold mb-2">automated-etl-pipeline</h3>
+      </a>
+      <a href="https://github.com/Weirdmenim/fastapi-sentiment-api" target="_blank" class="block bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-md hover:shadow-lg transition hidden" data-category="data-cleaning">
+        <h3 class="text-xl font-semibold mb-2">fastapi-sentiment-api</h3>
+      </a>
+      <a href="https://github.com/Weirdmenim/flask-notes-api" target="_blank" class="block bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-md hover:shadow-lg transition hidden" data-category="data-cleaning">
+        <h3 class="text-xl font-semibold mb-2">flask-notes-api</h3>
+      </a>
+      <a href="https://github.com/Weirdmenim/resume-match-api" target="_blank" class="block bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-md hover:shadow-lg transition hidden" data-category="data-cleaning">
+        <h3 class="text-xl font-semibold mb-2">resume-match-api</h3>
+      </a>
+
+      <!-- Data Visualization -->
+      <a href="https://github.com/Weirdmenim/eda-dashboard" target="_blank" class="block bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-md hover:shadow-lg transition hidden" data-category="data-visualization">
+        <h3 class="text-xl font-semibold mb-2">eda-dashboard</h3>
+      </a>
+      <a href="https://github.com/Weirdmenim/exploratory-data-analysis-dashboard" target="_blank" class="block bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-md hover:shadow-lg transition hidden" data-category="data-visualization">
+        <h3 class="text-xl font-semibold mb-2">exploratory-data-analysis-dashboard</h3>
+      </a>
+      <a href="https://github.com/Weirdmenim/interactive-bar-chart-generator" target="_blank" class="block bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-md hover:shadow-lg transition hidden" data-category="data-visualization">
+        <h3 class="text-xl font-semibold mb-2">interactive-bar-chart-generator</h3>
+      </a>
+      <a href="https://github.com/Weirdmenim/Network-Analysis-of-Social-Interactions" target="_blank" class="block bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-md hover:shadow-lg transition hidden" data-category="data-visualization">
+        <h3 class="text-xl font-semibold mb-2">Network-Analysis-of-Social-Interactions</h3>
+      </a>
+      <a href="https://github.com/Weirdmenim/ML-Model-Comparison-Dashboard" target="_blank" class="block bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-md hover:shadow-lg transition hidden" data-category="data-visualization">
+        <h3 class="text-xl font-semibold mb-2">ML-Model-Comparison-Dashboard</h3>
+      </a>
+
+              <!-- Data Analysis -->
+              <a href="https://github.com/Weirdmenim/customer-and-marketing-analytics" target="_blank" rel="noopener" 
+              class="block bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-md hover:shadow-lg transition hidden" 
+              data-category="data-analysis">
+             <h3 class="text-xl font-semibold mb-2">customer-and-marketing-analytics</h3>
+           </a>
+           <a href="https://github.com/Weirdmenim/Customer-Churn-Prediction" target="_blank" rel="noopener" 
+              class="block bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-md hover:shadow-lg transition hidden" 
+              data-category="data-analysis">
+             <h3 class="text-xl font-semibold mb-2">Customer-Churn-Prediction</h3>
+           </a>
+           <a href="https://github.com/Weirdmenim/predicting-house-prices-linear-regression" target="_blank" rel="noopener" 
+              class="block bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-md hover:shadow-lg transition hidden" 
+              data-category="data-analysis">
+             <h3 class="text-xl font-semibold mb-2">predicting-house-prices-linear-regression</h3>
+           </a>
+           <a href="https://github.com/Weirdmenim/Hybrid-Movie-Recommendation-System" target="_blank" rel="noopener" 
+              class="block bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-md hover:shadow-lg transition hidden" 
+              data-category="data-analysis">
+             <h3 class="text-xl font-semibold mb-2">Hybrid-Movie-Recommendation-System</h3>
+           </a>
+           <a href="https://github.com/Weirdmenim/time-series-forecasting-app" target="_blank" rel="noopener" 
+              class="block bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-md hover:shadow-lg transition hidden" 
+              data-category="data-analysis">
+             <h3 class="text-xl font-semibold mb-2">time-series-forecasting-app</h3>
+           </a>
+   
+           <!-- Web Scraping -->
+           <a href="https://github.com/Weirdmenim/Web-Scraper" target="_blank" rel="noopener" 
+              class="block bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-md hover:shadow-lg transition hidden" 
+              data-category="web-scraping">
+             <h3 class="text-xl font-semibold mb-2">Web-Scraper</h3>
+           </a>
+           <a href="https://github.com/Weirdmenim/tf-file-transer" target="_blank" rel="noopener" 
+              class="block bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-md hover:shadow-lg transition hidden" 
+              data-category="web-scraping">
+             <h3 class="text-xl font-semibold mb-2">tf-file-transer</h3>
+           </a>
+           <a href="https://github.com/Weirdmenim/tf-transfer-cats-dogs" target="_blank" rel="noopener" 
+              class="block bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-md hover:shadow-lg transition hidden" 
+              data-category="web-scraping">
+             <h3 class="text-xl font-semibold mb-2">tf-transfer-cats-dogs</h3>
+           </a>
+           <a href="https://github.com/Weirdmenim/tf-cnn-mnist" target="_blank" rel="noopener" 
+              class="block bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-md hover:shadow-lg transition hidden" 
+              data-category="web-scraping">
+             <h3 class="text-xl font-semibold mb-2">tf-cnn-mnist</h3>
+           </a>
+           <a href="https://github.com/Weirdmenim/Object-Detection-with-TensorFlow-Object-Detection-API" target="_blank" rel="noopener" 
+              class="block bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-md hover:shadow-lg transition hidden" 
+              data-category="web-scraping">
+             <h3 class="text-xl font-semibold mb-2">Object-Detection-with-TensorFlow-Object-Detection-API</h3>
+           </a>
+   
+           <!-- Others -->
+           <a href="https://github.com/Weirdmenim/Gesture-Based-Light-Switch-Simulator" target="_blank" rel="noopener" 
+              class="block bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-md hover:shadow-lg transition hidden" 
+              data-category="others">
+             <h3 class="text-xl font-semibold mb-2">Gesture-Based-Light-Switch-Simulator</h3>
+           </a>
+           <a href="https://github.com/Weirdmenim/Image-Style-Transfer-App" target="_blank" rel="noopener" 
+              class="block bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-md hover:shadow-lg transition hidden" 
+              data-category="others">
+             <h3 class="text-xl font-semibold mb-2">Image-Style-Transfer-App</h3>
+           </a>
+           <a href="https://github.com/Weirdmenim/model-comparison" target="_blank" rel="noopener" 
+              class="block bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-md hover:shadow-lg transition hidden" 
+              data-category="others">
+             <h3 class="text-xl font-semibold mb-2">model-comparison</h3>
+           </a>
+           <a href="https://github.com/Weirdmenim/customer-and-marketing-analytics" target="_blank" rel="noopener" 
+              class="block bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-md hover:shadow-lg transition hidden" 
+              data-category="others">
+             <h3 class="text-xl font-semibold mb-2">customer-and-marketing-analytics</h3>
+           </a>
+           <a href="https://github.com/Weirdmenim/python-password-generator" target="_blank" rel="noopener" 
+              class="block bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-md hover:shadow-lg transition hidden" 
+              data-category="others">
+             <h3 class="text-xl font-semibold mb-2">python-password-generator</h3>
+           </a>
+         </div>
+       </div>
+     </section>
+   
+
 
     <!-- Blog Section -->
     <section id="blog" class="py-20 bg-white dark:bg-gray-800">

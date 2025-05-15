@@ -1,15 +1,3 @@
-// Complete fixed version of main.js with corrected dark mode functionality
-
-/**
- * main.js - Enhanced website functionality with improved security, accessibility, and error handling
- * 
- * This file contains the JavaScript for handling:
- * - Mobile navigation menu
- * - Dark/light theme toggle
- * - Content filtering system
- * - Analytics tracking with privacy considerations
- */
-
 document.addEventListener('DOMContentLoaded', () => {
   try {
     // Initialize all components
@@ -18,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
       { name: 'Dark Mode', init: initDarkMode },
       { name: 'Project Filters', init: () => initFilters(
         '#project-filters .filter-btn', 
-        '#projects .grid > div[data-category]', 
+        '#projects .grid > a[data-category]', 
         'category', 
         'project'
       )},

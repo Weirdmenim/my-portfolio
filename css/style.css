@@ -1,14 +1,4 @@
-/* Force social SVGs to 16×16
-.social-icons svg {
-  width: 16px !important;
-  height: 16px !important;
-  display: inline-block;
-} */
 
-/* Optional: adjust spacing if needed */
-/* .social-icons a {
-  margin: 0 4px;
-} */
 
 /* Base styles */
 :root {
