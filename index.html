@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <!-- Content Security Policy -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.tailwindcss.com https://www.googletagmanager.com 'unsafe-inline'; style-src 'self' https://cdn.jsdelivr.net 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://www.google-analytics.com;"> />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.tailwindcss.com https://www.googletagmanager.com 'unsafe-inline'; style-src 'self' https://cdn.jsdelivr.net 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://www.google-analytics.com;">
 
   <!-- Basic Meta -->
   <meta charset="UTF-8">
@@ -16,6 +16,7 @@
   <meta property="og:image" content="https://www.nmenim.dev/images/og-image.jpg">
   <meta property="og:url" content="https://www.nmenim.dev">
   <meta name="twitter:card" content="summary_large_image">
+  
   <!-- Preconnect to speed up resource loading -->
   <link rel="preconnect" href="https://cdn.tailwindcss.com">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
@@ -23,60 +24,93 @@
 
   <!-- Smooth Scroll -->
   <style>
-html { scroll-behavior: smooth; }
-</style>
+    html { scroll-behavior: smooth; }
+  </style>
 
-<!-- Tailwind config: enable class-based dark mode -->
+  <!-- IMPORTANT: Tailwind config before loading Tailwind to enable class-based dark mode -->
   <script>
-  tailwind.config = { darkMode: 'class' }</script>
-<!-- Tailwind CSS via CDN -->
+    tailwind.config = { 
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-<!-- Custom CSS -->
+  <!-- Custom CSS -->
   <link href="css/style.css" rel="stylesheet">
-
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z30T46JGHS"></script>
-  <!-- Main JS -->
-  <script src="js/main.js" defer></script>
 </head>
-<body class="pt-16 bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100">
-  
 
-  <!-- Skip to content -->
-  <a href="#home" class="sr-only focus:not-sr-only p-2">Skip to main content</a>
+<body class="pt-16 bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+  <!-- Skip to content for accessibility -->
+  <a href="#main-content" class="skip-to-content focus:not-sr-only">Skip to main content</a>
+  
   <header role="banner">
-  <!-- Navbar -->
-    <nav class="bg-white dark:bg-gray-800 fixed w-full z-10 shadow-md" role="navigation" aria-label="Main navigation">
-      <div class="container mx-auto px-4 py-2 flex items-center justify-between">
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 right-0 z-40 bg-white dark:bg-gray-800 shadow-md transition-colors duration-300" role="navigation" aria-label="Main navigation">
+      <div class="container mx-auto px-4 py-3 flex items-center justify-between">
         <!-- Logo -->
-        <a href="#home" class="text-2xl font-bold text-gray-800 dark:text-gray-100">Nsikak Menim</a>
+        <a href="#home" class="text-2xl font-bold text-gray-800 dark:text-gray-100 transition-colors duration-300">Nsikak Menim</a>
 
         <!-- Right controls: dark mode & menu -->
         <div class="flex items-center space-x-4">
           <!-- Dark Mode Toggle -->
-          <button id="theme-toggle" class="focus:outline-none" aria-label="Toggle dark mode">
+          <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-colors duration-300" aria-label="Toggle dark mode">
             <span id="theme-icon" class="text-xl">🌙</span>
           </button>
+          
           <!-- Mobile Menu Button -->
-          <button id="menu-btn" class="md:hidden focus:outline-none" aria-label="Toggle navigation" aria-expanded="false" aria-controls="menu">
+          <button id="menu-btn" class="md:hidden p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-colors duration-300" aria-label="Toggle navigation" aria-expanded="false" aria-controls="menu">
             <svg class="h-6 w-6 text-gray-800 dark:text-gray-100" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </button>
         </div>
 
-        <!-- Navigation Links -->
+        <!-- Navigation Links - Visible on desktop, hidden on mobile until toggled -->
         <ul id="menu" class="hidden md:flex space-x-6" aria-hidden="true">
-          <li><a href="#home" class="hover:text-gray-900 dark:hover:text-gray-200">Home</a></li>
-          <li><a href="#projects" class="hover:text-gray-900 dark:hover:text-gray-200">Projects</a></li>
-          <li><a href="#blog" class="hover:text-gray-900 dark:hover:text-gray-200">Blog</a></li>
-          <li><a href="#about" class="hover:text-gray-900 dark:hover:text-gray-200">About</a></li>
-          <li><a href="#contact" class="hover:text-gray-900 dark:hover:text-gray-200">Contact</a></li>
+          <li><a href="#home" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">Home</a></li>
+          <li><a href="#projects" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">Projects</a></li>
+          <li><a href="#blog" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">Blog</a></li>
+          <li><a href="#about" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">About</a></li>
+          <li><a href="#contact" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">Contact</a></li>
         </ul>
+        
+        <!-- Mobile Menu - Only shown when toggled -->
+        <div id="mobile-menu" class="hidden fixed top-16 left-0 right-0 bg-white dark:bg-gray-800 shadow-lg p-4 md:hidden transition-transform duration-300 z-30">
+          <ul class="space-y-4">
+            <li><a href="#home" class="block hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">Home</a></li>
+            <li><a href="#projects" class="block hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">Projects</a></li>
+            <li><a href="#blog" class="block hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">Blog</a></li>
+            <li><a href="#about" class="block hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">About</a></li>
+            <li><a href="#contact" class="block hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">Contact</a></li>
+          </ul>
+        </div>
       </div>
     </nav>
-  </header> 
+  </header>
+
+  <!-- NO-JS Warning - Only shows when JavaScript is disabled -->
+  <noscript>
+    <div class="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4" role="alert">
+      <p class="font-bold">JavaScript Required</p>
+      <p>This website works best with JavaScript enabled. Some features may be limited.</p>
+    </div>
+  </noscript>
+
   <main id="main-content">
     <!-- Hero Section -->
     <section id="home" class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white h-screen flex items-center">
@@ -105,9 +139,15 @@ html { scroll-behavior: smooth; }
 
         <!-- Projects Grid -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div class="bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-md hover:shadow-lg transition" data-category="python,others">
+          <a
+            href="https://github.com/NsikakMenim/Data-Analysis-Portfolio/blob/main/analysis_of_insurance_data.ipynb"
+            target="_blank"
+            rel="noopener"
+            class="block bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-md hover:shadow-lg transition"
+            data-category="python,others"
+          >
             <h3 class="text-xl font-semibold mb-2">Python Projects</h3>
-          </div>
+          </a>
           <div class="bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-md hover:shadow-lg transition" data-category="data-cleaning">
             <h3 class="text-xl font-semibold mb-2">Data Cleaning</h3>
           </div>
@@ -180,30 +220,114 @@ html { scroll-behavior: smooth; }
     <section id="contact" class="py-20 bg-gray-100 dark:bg-gray-900">
       <div class="container mx-auto px-6 lg:px-20 max-w-xl">
         <h2 class="text-3xl lg:text-4xl font-bold text-center mb-8">Contact Me</h2>
-        <form class="space-y-6" novalidate><!-- Name, Email, Message fields --></form>
-        <div class="social-icons flex justify-center space-x-3 mt-8">
-          <a href="https://github.com/weirdmenim" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><svg class="h-4 w-4" width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="..."/></svg></a>
-          <a href="https://linkedin.com/in/nsikak-menim/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><svg class="h-4 w-4" width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="..."/></svg></a>
+        <form
+      action="mailto:nemenim@gmail.com"
+      method="POST"
+      enctype="text/plain"
+      class="space-y-6"
+      novalidate
+        >
+          <div>
+            <label for="name" class="block text-lg font-medium mb-2">Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              class="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            />
+          </div>
+
+          <div>
+            <label for="email" class="block text-lg font-medium mb-2">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            />
+          </div>
+
+          <div>
+            <label for="message" class="block text-lg font-medium mb-2">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              required
+              class="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            ></textarea>
+          </div>
+
+          <div class="text-center">
+            <button
+              type="submit"
+              class="bg-indigo-600 text-white font-semibold px-6 py-3 rounded-full shadow hover:bg-indigo-700 transition"
+            >
+              Send Message
+            </button>
+          </div>
+        </form>
+
+                <!-- GitHub Icon -->
+        <a href="https://github.com/weirdmenim" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+          <svg xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6 text-gray-600 dark:text-gray-300"
+              viewBox="0 0 24 24"
+              fill="currentColor">
+            <path d="M12 .297C5.373.297 0 5.67 0 12.297c0 5.3 3.438 9.8 8.205 11.385.6.11.82-.26.82-.577 
+                    0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.757-1.333-1.757
+                    -1.09-.745.083-.73.083-.73 1.205.085 1.84 1.237 1.84 1.237 1.07 1.835 2.807 1.305 3.492.998
+                    .108-.775.42-1.305.763-1.605-2.665-.3-5.466-1.332-5.466-5.93  
+                    0-1.31.467-2.38 1.235-3.22-.123-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.3 1.23
+                    .957-.266 1.98-.398 3-.403 1.02.005 2.043.137 3 .403  
+                    2.29-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.873.12 3.176  
+                    .77.84 1.233 1.91 1.233 3.22 0 4.61-2.807 5.625-5.48 5.92  
+                    .43.37.823 1.102.823 2.222 0 1.605-.015 2.896-.015 3.292  
+                    0 .32.215.694.825.577C20.565 22.092 24 17.592 24 12.297  
+                    24 5.67 18.627.297 12 .297z"/>
+          </svg>
+        </a>
+
+        <!-- LinkedIn Icon -->
+        <a href="https://linkedin.com/in/nsikak-menim/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+          <svg xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6 text-gray-600 dark:text-gray-300"
+              viewBox="0 0 24 24"
+              fill="currentColor">
+            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14
+                    c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5
+                    v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5
+                    -11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75
+                    1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.5
+                    c0-1.311-.025-2.996-1.825-2.996-1.827 0-2.107
+                    1.427-2.107 2.899v5.597h-3v-10h2.877v1.365h.041
+                    c.4-.758 1.38-1.557 2.84-1.557 3.037 0 3.594
+                    1.999 3.594 4.597v5.595z"/>
+          </svg>
+        </a>
+
         </div>
       </div>
     </section>
   </main>
 
-  <footer role="contentinfo">
-  <!-- Footer -->
-    <footer class="bg-white dark:bg-gray-800 py-6">
-      <div class="container mx-auto px-6 lg:px-20 flex flex-col md:flex-row items-center justify-between">
-        <p class="text-gray-600 dark:text-gray-400 text-sm">© 2025 Nsikak Menim. All rights reserved.</p>
-        <ul class="flex space-x-4 mt-4 md:mt-0">
-          <li><a href="#home" class="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 text-sm">Home</a></li>
-          <li><a href="#projects" class="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 text-sm">Projects</a></li>
-          <li><a href="#blog" class="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 text-sm">Blog</a></li>
-          <li><a href="#about" class="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 text-sm">About</a></li>
-          <li><a href="#contact" class="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover$text-gray-200 text-sm">Contact</a></li>
-        </ul>
-        <a href="#home" class="inline-block text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 mt-4 md:mt-0" aria-label="Back to top">↑ Top</a>
-      </div>
-    </footer>
+  <footer class="bg-white dark:bg-gray-800 py-6 transition-colors duration-300" role="contentinfo">
+    <div class="container mx-auto px-6 lg:px-20 flex flex-col md:flex-row items-center justify-between">
+      <p class="text-gray-600 dark:text-gray-400 text-sm transition-colors duration-300">© 2025 Nsikak Menim. All rights reserved.</p>
+      <ul class="flex space-x-4 mt-4 md:mt-0">
+        <li><a href="#home" class="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 text-sm transition-colors duration-300">Home</a></li>
+        <li><a href="#projects" class="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 text-sm transition-colors duration-300">Projects</a></li>
+        <li><a href="#blog" class="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 text-sm transition-colors duration-300">Blog</a></li>
+        <li><a href="#about" class="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 text-sm transition-colors duration-300">About</a></li>
+        <li><a href="#contact" class="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 text-sm transition-colors duration-300">Contact</a></li>
+      </ul>
+      <a href="#home" class="inline-block text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 mt-4 md:mt-0 transition-colors duration-300" aria-label="Back to top">↑ Top</a>
+    </div>
   </footer>
+
+  <!-- Main JS - Note the script is now loaded after all elements -->
+  <script src="js/main.js" defer></script>
 </body>
 </html>
